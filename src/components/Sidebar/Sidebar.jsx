@@ -1,31 +1,57 @@
 import React from 'react';
-import { faSearch, faHome, faHeart, faUser, faSlidersH } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faHome, faHeart, faUser, faSlidersH, faMarker } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './Sidebar.css';
+import styles from './Sidebar.module.css';
+import SidebarItem from '../SidebarItem/SidebarItem';
 
-const Sidebar = () => {
+const Sidebar = ({toggleJoinModal}) => {
+    const handleJoinModal = () => {
+        toggleJoinModal();
+    }
+
+    const sidebarItems = [
+        {
+            id : 1,
+            icon: <FontAwesomeIcon icon={faSearch} />,
+            iconName: 'Search',
+            fn : ''
+        },
+        {
+            id : 2,
+            icon: <FontAwesomeIcon icon={faHome} />,
+            iconName: 'Home',
+            fn : ''
+        },
+        {
+            id : 3,
+            icon: <FontAwesomeIcon icon={faHeart} />,
+            iconName: 'Favs',
+            fn : ''
+        },
+        {
+            id : 4,
+            icon: <FontAwesomeIcon icon={faUser} />,
+            iconName: 'Profile',
+            fn : ''
+        },
+        {
+            id : 5,
+            icon: <FontAwesomeIcon icon={faSlidersH} />,
+            iconName: 'Setting',
+            fn : ''
+        },
+        {
+            id : 6,
+            icon: <FontAwesomeIcon icon={faMarker} />,
+            iconName: 'Join',
+            fn : handleJoinModal
+        }
+    ];
     return (
-        <div className="sidebar">
-            <div className="sidebar-menu">
-                <FontAwesomeIcon icon={faSearch} />
-                <a href="#">Search</a>
-            </div>
-            <div className="sidebar-menu">
-                <FontAwesomeIcon icon={faHome} />
-                <a href="#">Home</a>
-            </div>
-            <div className="sidebar-menu">
-                <FontAwesomeIcon icon={faHeart} />
-                <a href="#">Favs</a>
-            </div>
-            <div className="sidebar-menu">
-                <FontAwesomeIcon icon={faUser} />
-                <a href="#">Profile</a>
-            </div>
-            <div className="sidebar-menu">
-                <FontAwesomeIcon icon={faSlidersH} />
-                <a href="#">Setting</a>
-            </div>
+        <div className={styles.sidebar}>
+            {
+                sidebarItems.map((item) => <SidebarItem key={item.id} info={item} /> )
+            }
         </div>
     );
 }

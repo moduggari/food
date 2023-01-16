@@ -1,5 +1,5 @@
 
-.dashboard-order {
+.dashboardOrder {
     width : 340px;
     min-height : 100%;
     position : fixed;
@@ -10,20 +10,20 @@
     z-index : 2;
 }
 
-.dashboard-order > h3 {
+.dashboardOrder > h3 {
     padding : 10px 0;
 }
 
-.dashboard-order .order-address > h4 {
+.dashboardOrder .orderAddress > h4 {
     line-height : 2;
 }
 
-.dashboard-order .order-time {
+.dashboardOrder .orderTime {
     font-size : 0.8rem;
     color : var(--darkGrey)
 }
 
-.order-wrapper {
+.orderWrapper {
     height : 180px;
     width : 100%;
     overflow-y : scroll;
@@ -31,21 +31,21 @@
 }
 
 /* custom scroll */
-.order-wrapper::-webkit-scrollbar {
+.orderWrapper::-webkit-scrollbar {
     width : 7px;
 }
 
-.order-wrapper::-webkit-scrollbar-track {
+.orderWrapper::-webkit-scrollbar-track {
     background-color: var(--lightGrey);
     border-radius : 20px;
 }
 
-.order-wrapper::-webkit-scrollbar-thumb {
+.orderWrapper::-webkit-scrollbar-thumb {
     background-color : var(--darkGrey);
     border-radius : 20px;
 }
 
-.order-wrapper .order-card {
+.orderWrapper .orderCard {
     display : grid;
     grid-template-columns: 0.6fr 1fr 0.5fr;
     padding : 10px 0;
@@ -54,14 +54,14 @@
     align-items: flex-start;
 }
 
-.order-wrapper .order-card .order-image {
+.orderWrapper .orderCard .orderImage {
     width : 70px;
     height : 70px;
     object-fit : cover;
     border-radius: 15px;
 }
 
-.order-wrapper .order-card .order-detail > input {
+.orderWrapper .orderCard .orderDetail > input {
     width : 35px;
     height : 35px;
     text-align : center;
@@ -76,16 +76,16 @@
     border : 1px dashed var(--grey);
 }
 
-.order-total > p {
+.orderTotal > p {
     padding : 10px 0;
 }
 
-.order-total > p > span {
+.orderTotal > p > span {
     float : right;
     font-weight: 600;
 }
 
-.order-promo {
+.orderPromo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,13 +97,13 @@
     margin : 5px 0 10px 0;
 }
 
-.input-promo {
+.inputPromo {
     height : 100%;
     background-color: transparent;
     border : none;
 }
 
-.button-promo {
+.buttonPromo {
     float : right;
     background-color: var(--yellow);
     border : none;
@@ -130,7 +130,7 @@
 }
 
 @media screen and (max-width:680px) {
-    .dashboard-order {
+    .dashboardOrder {
         width : 100%;
         left : 0;
     }

@@ -1,7 +1,6 @@
 import React from 'react';
+import styles from './Dashboard.module.css';
 import DashboardCard from '../DashboardCard/DashboardCard';
-import './Dashboard.css';
-
 
 const Dashboard = () => {
     const recommends = [
@@ -73,31 +72,24 @@ const Dashboard = () => {
     ];
 
     return (
-        <div className="dashboard">
-            <div className="dashboard-banner">
+        <div className={styles.dashboard}>
+            <div className={styles.dashboardBanner}>
                 <img src="images/main.jpg" alt="" />
-                <div className="banner-promo">
+                <div className={styles.bannerPromo}>
                     <h1><span>50% OFF</span><br />Tasty Food<br />On Your Hand</h1>
                 </div>
             </div>
 
-            <h3 className="dashboard-title">Recommend Food For You</h3>
-            <div className="dashboard-menu">
+            <h3 className={styles.dashboardTitle}>Recommend Food For You</h3>
+            <div className={styles.dashboardMenu}>
                 {
-                    recommends.map((item)=><a href='{item.url}' key={item.id}>{item.title}</a>)
+                    recommends.map((item)=><a href={item.url} key={item.id}>{item.title}</a>)
                 }
             </div>
 
-            <div className="dashboard-content">
+            <div className={styles.dashboardContent}>
                 {
-                    cards.map((item)=><DashboardCard 
-                        id={item.id} 
-                        image={item.image} 
-                        menu={item.menu} 
-                        price={item.price} 
-                        summary={item.summay}
-                        deliveryTime={item.deliveryTime}
-                    />)
+                    cards.map((item)=><DashboardCard key={item.id} info={item} />)
                 }
             </div>
         </div>

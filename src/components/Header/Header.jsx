@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import styles from './Header.module.css';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -7,8 +7,8 @@ const Header = () => {
     return (
         <>
             <input type="checkbox" id="cart" />
-            <label htmlFor="cart" className="label-cart"><FontAwesomeIcon icon={faShoppingCart} /></label>
-            <h3 className="logo">오늘 점심 뭐 먹지 ??</h3>
+            <label htmlFor="cart" className={styles.labelCart}><FontAwesomeIcon icon={faShoppingCart} /></label>
+            <h3 className={styles.logo}>오늘 점심 뭐 먹지 ??</h3>
         </>
     );
 }
